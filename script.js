@@ -215,19 +215,3 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
 
 
 
-fetch("https://api.npoint.io/33e84bc2716cc48bee60", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      name: "Nandhu",
-      age: 22
-    })
-  })
-  .then(response => response.text())
-  .then(text => {
-    const data = text ? JSON.parse(text) : {};
-    console.log(1,text);
-  })
-  .catch(error => console.error(error));
