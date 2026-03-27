@@ -1,0 +1,183 @@
+/* ===== Theme ===== */
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --primary:#2563eb;
+  --primary-dark:#1e40af;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== Base ===== */
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:
+    radial-gradient(circle at 20% 20%, #e0e7ff 0%, transparent 40%),
+    radial-gradient(circle at 80% 10%, #dbeafe 0%, transparent 35%),
+    var(--bg);
+  color:var(--text);
+}
+
+/* ===== Layout Center ===== */
+.container{
+  max-width:640px;
+  margin:60px auto;
+  background:var(--card);
+  border-radius:20px;
+  padding:40px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  animation:fade .5s ease;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(15px)}
+  to{opacity:1; transform:none}
+}
+
+/* ===== Headings ===== */
+h1,h2{
+  text-align:center;
+  margin-top:0;
+  color:#111827;
+  letter-spacing:.3px;
+}
+
+h1{
+  font-size:28px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* ===== Inputs ===== */
+label{
+  font-weight:600;
+  margin-top:18px;
+  display:block;
+}
+#dropZone{
+  padding: 7rem 0;
+
+}
+
+select{
+  width:100%;
+  margin-top:8px;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  font-size:16px;
+  transition:.25s;
+  background:#fafafa;
+}
+
+select:focus{
+  outline:none;
+  border-color:var(--primary);
+  background:white;
+  box-shadow:0 0 0 3px #2563eb20;
+}
+
+/* ===== Upload Box ===== */
+.excelFile{
+  margin-top:18px;
+  border:2px dashed #c7d2fe;
+  border-radius:16px;
+  padding:55px 20px;
+  text-align:center;
+  font-weight:600;
+  color:var(--primary);
+  cursor:pointer;
+  transition:.3s;
+  background:#f8faff;
+}
+
+.excelFile:hover{
+  background:#eef2ff;
+  border-color:var(--primary);
+  transform:translateY(-2px);
+}
+
+#excelFile{
+  display:none;
+}
+
+/* ===== Button ===== */
+#generateBtn,
+a.download-link{
+
+  width:100%;
+  margin-top:28px;
+  padding:16px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+
+  color:white;
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  box-shadow:0 6px 18px #2563eb40;
+
+  transition:.3s;
+}
+
+#generateBtn:hover,
+a.download-link:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px #2563eb55;
+}
+
+/* ===== Status ===== */
+#status{
+  text-align:center;
+  margin-top:18px;
+  font-weight:600;
+  color:#047857;
+}
+
+/* ===== File Name ===== */
+#fileName{
+  text-align:center;
+  margin-top:18px;
+  font-weight:600;
+  color:var(--primary);
+  display:none;
+  word-break:break-word;
+}
+
+#fileName.file-loaded{
+  display:block;
+}
+
+#fileName:hover{
+  text-decoration:underline;
+}
+
+/* ===== Mobile ===== */
+@media(max-width:600px){
+
+  .container{
+    margin:25px 12px;
+    padding:26px;
+    border-radius:18px;
+  }
+
+  h1{
+    font-size:23px;
+  }
+
+  .excelFile{
+    padding:45px 15px;
+  }
+}
